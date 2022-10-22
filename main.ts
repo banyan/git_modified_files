@@ -19,7 +19,7 @@ async function main(object: string | undefined) {
 
 await new Command()
   .name('git_modified_files')
-  .version('0.1.3')
+  .version('0.1.4')
   .description(
     'A Git subcommand to list modified files in git commit or from current working tree',
   )
