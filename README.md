@@ -7,7 +7,7 @@ This CLI tool was created with the motivation to easily edit files that are curr
 ## Installation
 
 ```
-❯ deno install --allow-run -n git_modified_files https://deno.land/x/git_modified_files@0.1.0/main.ts
+❯ deno install --allow-run -n git_modified_files https://deno.land/x/git_modified_files@0.1.1/main.ts
 ```
 
 ## Usage
