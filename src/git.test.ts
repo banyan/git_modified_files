@@ -10,7 +10,7 @@ const setupFirstCommit = async () => {
   Deno.chdir(tmpTestDir);
 
   await exec('touch a.txt');
-  await exec('git init');
+  await exec('git init --initial-branch=main');
   await exec('git config --local user.email "hi@example.com"');
   await exec('git config --local user.name "yo"');
   await exec('git add .');
