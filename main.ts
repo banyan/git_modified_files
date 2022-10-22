@@ -19,7 +19,7 @@ export async function main(object: string | undefined) {
     const files = object
       ? await getModifiedFilesOnCommit(object)
       : await getModifiedFilesOnWorkingTree();
-    console.log(files);
+    if (files) console.log(files);
   } catch (error) {
     console.error(error);
     Deno.exit(1);
