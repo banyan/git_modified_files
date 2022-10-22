@@ -7,7 +7,7 @@ import {
 
 const { args } = await new Command()
   .name('git_modified_files')
-  .version('0.1.2')
+  .version('0.1.3')
   .description(
     'A Git subcommand to list modified files in git commit or from current working tree',
   )
