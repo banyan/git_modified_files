@@ -7,8 +7,10 @@ This CLI tool was created with the motivation to easily edit files that are curr
 ## Installation
 
 ```
-❯ deno install --allow-run -n git_modified_files https://deno.land/x/git_modified_files@0.1.1/main.ts
+❯ deno install --allow-run -n git-modified_files https://deno.land/x/git_modified_files@0.1.1/main.ts
 ```
+
+NOTE: Git has a convenient mechanism that allows users to create their own subcommands by simply placing an executable file called git-xxx, therefore it uses `git-modified_files` instead of `git_modified_files`.
 
 ## Usage
 
@@ -16,14 +18,14 @@ Get modified files from current working tree if no argument is given
 
 ```
 ❯ touch a.txt
-❯ git_modified_files
+❯ git modified_files
 a.txt
 ```
 
 Get modified files in git commit if object (sha1) is given
 
 ```
-❯ git_modified_files fbb1185
+❯ git modified_files fbb1185
 a.txt
 ```
 
