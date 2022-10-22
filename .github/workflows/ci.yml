@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - run: |
+          deno test --allow-write --allow-run --allow-read
