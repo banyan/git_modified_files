@@ -5,16 +5,7 @@ import {
   getModifiedFilesOnWorkingTree,
 } from './src/git.ts';
 
-const { args } = await new Command()
-  .name('git_modified_files')
-  .version('0.1.3')
-  .description(
-    'A Git subcommand to list modified files in git commit or from current working tree',
-  )
-  .arguments('[object:string]')
-  .parse();
-
-export async function main(object: string | undefined) {
+async function main(object: string | undefined) {
   try {
     const files = object
       ? await getModifiedFilesOnCommit(object)
@@ -26,4 +17,14 @@ export async function main(object: string | undefined) {
   }
 }
 
-main(args[0]);
+await new Command()
+  .name('git_modified_files')
+  .version('0.1.3')
+  .description(
+    'A Git subcommand to list modified files in git commit or from current working tree',
+  )
+  .arguments('[object:string]')
+  .action(async (_, object) => {
+    await main(object);
+  })
+  .parse();
