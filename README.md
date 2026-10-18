@@ -6,8 +6,10 @@ This CLI tool was created with the motivation to easily edit files that are curr
 
 ## Installation
 
+Requires [Rust](https://rustup.rs/).
+
 ```
-❯ deno install --allow-run -n git-modified_files https://deno.land/x/git_modified_files@0.1.4/main.ts
+❯ cargo install --git https://github.com/banyan/git_modified_files
 ```
 
 NOTE: Git has a convenient mechanism that allows users to create their own subcommands by simply placing an executable file called git-xxx, therefore it uses `git-modified_files` instead of `git_modified_files`.
@@ -28,6 +30,14 @@ Get modified files in git commit if object (sha1) is given
 ❯ git modified_files fbb1185
 a.txt
 ```
+
+## Development
+
+```
+❯ cargo test
+```
+
+NOTE: Up to 0.1.4 this was a Deno module published on deno.land/x. Deno's development ends in 2027, so 0.2.0 is a Rust rewrite with the same output (paths with spaces and `.woff`/`.woff2` files are now handled correctly).
 
 ## License
 

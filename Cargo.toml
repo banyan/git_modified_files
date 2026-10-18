@@ -1,0 +1,17 @@
+[package]
+name = "git_modified_files"
+version = "0.2.0"
+edition = "2024"
+license = "MIT"
+description = "A Git subcommand to list modified files in git commit or from current working tree"
+repository = "https://github.com/banyan/git_modified_files"
+
+# Git runs any executable named git-<name> as `git <name>`.
+[[bin]]
+name = "git-modified_files"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+strip = true
+codegen-units = 1
